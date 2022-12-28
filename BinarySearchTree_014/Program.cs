@@ -89,7 +89,17 @@ namespace BinaryTreeNode_014
 
 		public void preOrder(Node ptr)
 		{
-
+			if (ROOT == null)
+			{
+				Console.WriteLine("Tree is Empty");
+				return ;
+			}
+			if (ptr != null)
+			{
+				Console.WriteLine(ptr.info + "");
+				preOrder(ptr.leftchild);
+				preOrder(ptr.rightchild);
+			}
 		}
 	}
 }
