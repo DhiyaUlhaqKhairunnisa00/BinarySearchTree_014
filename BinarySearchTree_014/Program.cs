@@ -54,6 +54,42 @@ namespace BinaryTreeNode_014
 				Console.WriteLine("Duplicate word not allowed");
 				return;
 			}
+			else /* If the specified node is not present*/
+			{
+				tmp = new Node(element, null, null); /* Creates a Node */
+				if (parent == null)/* If the trees is empty*/
+				{
+					ROOT = tmp;
+				}
+				else if (string.Compare(element, parent.info) < 0)
+				{
+					parent.leftchild = tmp;
+				}
+				else
+				{
+					parent.rightchild = tmp;
+				}
+			}
+		}
+
+		public void inOrder(Node ptr)
+		{
+			if (ROOT == null)
+			{
+				Console.WriteLine("Tree is Empty");
+				return;
+			}
+			if (ptr != null)
+			{
+				inOrder(ptr.leftchild);
+				Console.WriteLine(ptr.info + "");
+				inOrder(ptr.rightchild);
+			}
+		}
+
+		public void preOrder(Node ptr)
+		{
+
 		}
 	}
 }
