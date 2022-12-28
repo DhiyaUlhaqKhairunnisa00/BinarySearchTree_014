@@ -101,5 +101,19 @@ namespace BinaryTreeNode_014
 				preOrder(ptr.rightchild);
 			}
 		}
+		public void postOrder(Node ptr)/*Performs the postorder traversal of the three*/
+		{
+			if (ROOT == null)
+			{
+				Console.WriteLine("Tree is Empty");
+				return;
+			}
+			if (ptr != null)
+			{
+				postOrder(ptr.leftchild);
+				postOrder(ptr.rightchild);
+				Console.WriteLine(ptr.info + "");
+			}
+		}
 	}
 }
